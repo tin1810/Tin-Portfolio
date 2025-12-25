@@ -4,12 +4,14 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hwl_portforlio/main.dart';
-import 'package:hwl_portforlio/pages/education.dart';
+
 import 'dart:html' as html;
-import 'package:hwl_portforlio/pages/experience.dart';
-import 'package:hwl_portforlio/pages/project.dart';
+
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:tin_portfolio/main.dart';
+import 'package:tin_portfolio/pages/education.dart';
+import 'package:tin_portfolio/pages/experience.dart';
+import 'package:tin_portfolio/pages/project.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
 
@@ -52,10 +54,6 @@ class _HeroSectionState extends State<HeroSection>
   late AnimationController _projectsController;
   late AnimationController _contactController;
 
-  // Main animations
-  // late Animation<double> _imageScaleAnimation;
-  // late Animation<double> _navbarFadeAnimation;
-
   // Section animations
   late Animation<double> _experiencesFadeAnimation;
   late Animation<double> _educationFadeAnimation;
@@ -64,39 +62,73 @@ class _HeroSectionState extends State<HeroSection>
 
   final List<Experience> _experiences = const [
     Experience(
-      title: 'Flutter & Laravel Developer',
+      title: 'Software Engineer',
       company: 'Whatif Solutions Sdn Bhd',
-      duration: 'May 2025 - Sep 2025',
+      duration: 'May 2025 - Present',
       responsibilities: [
-        'Digicraft Home App',
-        'Zcultures App',
-        'Tiger Online Casino Backoffice',
-        'Infinity 688 Casino Backoffice',
+        'Developed high-performance Flutter apps such as Digicraft Home, Zcultures, and Thine, with scalable and user-focused mobile solutions in various fields.',
+        'Bring on boarded Apple in-app purchase subscriptions, and payment flows, providing secure, compliant and seamless billing experiences on iOS.',
+        'Added live chat and messaging services with ZEGOCLOUD which allow responsiveness and reliability when communicating within the app.',
+        'Design and development of maintainable application architectures in modular form, which is important in ensuring easy integration of features in complex multi-module systems.',
+        'Created and added Apple Shortcuts to automate user workflows and make apps more accessible and user friendly in the Apple ecosystem.',
+        'Worked closely with the cross-functional teams to improve the performance, reliability, and scalability of the applications and adhering to the best practices in clean architecture and state management.'
       ],
       link: 'https://www.whatifsolutions.my/',
     ),
     Experience(
-      title: 'Part-time Flutter Developer',
-      company: 'My Day Thu Kywal',
-      duration: 'Sep 2024 - Jan 2025',
+      title: 'Senior Mobile Developer(Team Lead)',
+      company: 'Startrick Sdn Bhd',
+      duration: 'Dec 2024 - May 2025',
       responsibilities: [
-        'Weday App',
+        'Created high performance Flutter software in the areas of Gym Management, Point and Loyalty systems, and E-commerce sites.',
+        'Developed as a contribution to the Event Planning System included in the MoveOn SuperApp and provides scalability in a multi-module application.',
+        'Managed a development team, increased performance and scaling of apps, and reviewed the code to guarantee the high code quality.'
       ],
-      link: 'https://myday.com.mm/',
+      link: 'https://www.linkedin.com/company/startrick-sdn-bhd/',
     ),
     Experience(
-      title: 'Flutter Developer',
-      company: 'Kwin Technologies',
-      duration: 'Sep 2022 - Apr 2025',
+      title: 'Senior Mobile Developer',
+      company: 'AYA Innovation Labs',
+      duration: 'Dec 2023 - Dec 2024',
       responsibilities: [
-        'Suzuki Smart Order App',
-        'Kwin HR Management App',
-        'ARFI Ecommerce App',
-        'Dr Rejvue Aesthetic Clinic Membership App',
-        'Yankin Bubble Tea POS App',
-        'Kwin Client Management App',
+        'Designed and developed the AYA Pay Wallet App, Partner App, and AYA Agency App, supporting secure financial transactions and agent management in the fintech ecosystem.',
+        'Integrated payment gateways and real-time notifications using Firebase, working closely with backend teams to implement secure APIs, authentication flows, and transaction processing.',
+        'Collaborated with UI/UX and backend teams to enhance performance, usability, and overall system reliability.',
       ],
-      link: 'http://kwintechnologies.com/',
+      link: 'https://www.ayainnovationlabs.com/',
+    ),
+    Experience(
+      title: 'Senior Mobile Developer',
+      company: 'Super Seven Stars',
+      duration: 'Dec 2022 - Dec 2023',
+      responsibilities: [
+        'Developed and maintained mobile applications for customer engagement solutions,including an on-demand delivery feature.',
+        'Integrated Firebase and WebSocket to provide real-time delivery man’s location updates to customer.',
+        'Improved app stability and reduce app crash rates by 90% through performance optimizations'
+      ],
+      link: 'https://www.supersevenstars.com/',
+    ),
+    Experience(
+      title: 'Mobile Developer',
+      company: 'UMG Myanmar',
+      duration: 'Dec 2021 - Dec 2022',
+      responsibilities: [
+        'Built and maintained Hi5 App (HR & Attendance tracking system) with selfie-based',
+        'Worked on the development of the PyawMae (Chatting App) with NodeJS backend and WebSocket, and Interviewer (HR) App with Flutter.',
+        'Integrated Firebase services for push notifications and real-time data synchronization.',
+        'Integrated Odoo ERP for HR automation and data synchronization.'
+      ],
+      link: 'https://www.umgmyanmar.com/',
+    ),
+    Experience(
+      title: 'Junior Mobile Developer',
+      company: 'KH Logistics',
+      duration: 'May 2021 - Nov 2021',
+      responsibilities: [
+        'Developed an Ecommerce Mobile App similar to the Alibaba and Shopee, handling product listings, order management and authentication',
+        'Designed the app UI/UX from scratch using Figma, ensuring an intuitive and visually appealing user experience.',
+      ],
+      link: 'https://www.linkedin.com/company/kh-logistic/',
     ),
   ];
 
@@ -114,7 +146,7 @@ class _HeroSectionState extends State<HeroSection>
       duration: 'Dec 2023 - Oct 2024',
       linkUni: 'https://www.nccedu.com/',
       linkDegree:
-          'https://drive.google.com/file/d/17Arr6LxB79z-KRWQOodM7-jT2C9dT1Md/view?usp=sharing',
+          'https://drive.google.com/file/d/1iII3wrVCnA3Imhl637isbUbec9l4_6gN/view?usp=sharing',
     ),
     EducationItem(
       degree: 'Level-4 Higher Diploma, Computing',
@@ -122,21 +154,22 @@ class _HeroSectionState extends State<HeroSection>
       duration: 'Jan 2023 - Dec 2023',
       linkUni: 'https://www.nccedu.com/',
       linkDegree:
-          'https://drive.google.com/file/d/1JpU3znVEIstXyJopNBdGqJ8ysAgDo4jA/view?usp=sharing',
+          'https://drive.google.com/file/d/1tHmTdBznx6mqbwAFevGjSgFia1aazUE9/view?usp=sharing',
     ),
     EducationItem(
-      degree: 'Final Part II - MBBS',
-      university: 'University of Medicine 2, Yangon',
-      duration: 'Dec 2014 - Jan 2020',
-      linkUni: 'https://um2ygn.edu.mm/',
-      linkDegree: '',
+      degree: 'Bachelor of Eletronic and Communication Engineering(Final)',
+      university: 'Technological University (Thanlyin)',
+      duration: 'Dec 2014 - Feb 2020',
+      linkUni: 'https://tuthanlyin.edu.mm/',
+      linkDegree:
+          'https://tuthanlyin.edu.mm/department/electronic-engineering/',
     ),
   ];
 
   final List<CertificationItem> _certificationItems = const [
     CertificationItem(
       icon: Icons.phone_android,
-      name: 'Flutter Full Term Course(PADC)',
+      name: 'Myanmar Roboleague',
       link:
           'https://drive.google.com/file/d/1omIB7SXl7D_xmjbrkk-nEPDkfPuxvqD8/view?usp=sharing',
     ),
@@ -174,7 +207,8 @@ class _HeroSectionState extends State<HeroSection>
         "Remote monitoring and control of smart appliances",
         "Real-time device status updates through MQTT",
         "Unified dashboard for managing multiple IoT devices",
-        "Lightweight and efficient communication for low-power devices"
+        "Lightweight and efficient communication for low-power devices",
+        "Apple Shortcuts integration enabling quick gate and door control via  iOS automations",
       ],
       challenges: [
         "Refactoring legacy Flutter codebase into a maintainable MVC structure",
@@ -199,7 +233,8 @@ class _HeroSectionState extends State<HeroSection>
       description:
           'A global AI-powered social commerce platform that leverages an O2O strategy to connect brands, creators, and nightlife venues for engagement.',
       techIcons: FontAwesomeIcons.flutter,
-      role: 'Code refactoring of legacy project, bug fixing on spot',
+      role:
+          'Implemented application features, refactored legacy code, fixed production bugs, and optimized app stability and performance',
       platform: "mobile",
       iosLink: "https://apps.apple.com/th/app/zcultures/id6747009373",
       androidLink:
@@ -215,304 +250,423 @@ class _HeroSectionState extends State<HeroSection>
         "AI-powered recommendations for products, events, and venues",
         "Seamless O2O (Online-to-Offline) integration for social and commercial activities",
         "Interactive platform connecting brands, creators, and nightlife venues",
-        "Personalized user experiences through smart data-driven features"
+        "Personalized user experiences through smart data-driven features",
+        "Real-time in-app messaging and chat powered by ZEGOCLOUD"
       ],
       challenges: [
         "Refactoring legacy Flutter codebase for improved maintainability",
         "Fixing UI inconsistencies and optimizing state management with Provider",
         "Resolving performance issues in real-time feed and recommendation rendering",
-        "Enhancing app stability and scalability within the MVC + Flutx structure"
+        "Enhancing app stability and scalability within the MVC + Flutx structure",
+        "Ensuring reliable real-time chat communication through seamless integration with ZEGOCLOUD",
       ],
     ),
     Project(
+      status: "Not launched yet",
       company: "Whatif Solutions Sdn Bhd",
       images: [
-        "assets/images/tiger_1.png",
-        "assets/images/tiger_2.png",
-        "assets/images/tiger_3.png",
-        "assets/images/tiger_4.png",
-        "assets/images/tiger_5.png",
+        "assets/images/Soul-Login-Phone.png",
+        "assets/images/Soul-Sign-up.png",
+        "assets/images/Soul-Onboarding-gender.png",
+        "assets/images/Soul-Match.png",
+        "assets/images/Soul-Non-match-User-view.png",
+        "assets/images/Soul-Feed.png",
       ],
-      imagePath: 'assets/images/tiger_main.png',
-      title: 'Tiger Backoffice',
+      imagePath: "assets/images/Soul-Login-Phone.png",
+      title: 'Thine App',
       description:
-          'A backoffice management system for online casinos, providing modules for banking, transactions, user settings, and log tracking.',
-      techIcons: FontAwesomeIcons.laravel,
+          'A next-generation social discovery and dating app that connect users based on interests, preferences, and behaviors.',
+      techIcons: FontAwesomeIcons.flutter,
       role:
-          'Develop full stack dashboard together under a lead senior fullstack developer',
-      platform: "web",
+          'Implemented application features, refactored legacy code, fixed production bugs, and optimized app stability and performance',
+      platform: "mobile",
+      iosLink: "",
+      androidLink: "",
+      webLink: "",
+      techStacks: [
+        {"Framework/Language": "Flutter/Dart"},
+        {"Architecture": "MVC"},
+        {"State Management": "Flutx"},
+        {"Backend": "PHP"},
+      ],
+      psAndKf: [
+        "User matching based on interests and behaviors",
+        "Personalized content feed with social discovery features",
+        "Secure user authentication and profile management",
+        "Interactive UI/UX design for engaging user experiences",
+      ],
+      challenges: [
+        "Refactoring legacy Flutter codebase for improved maintainability",
+        "Fixing UI inconsistencies and optimizing state management with Flutx",
+        "Resolving performance issues in real-time feed and recommendation rendering",
+        "Enhancing app stability and scalability within the MVC + Flutx structure",
+      ],
+    ),
+    Project(
+        company: "Startrick Sdn Bhd",
+        images: [
+          "assets/images/gym1.png",
+          "assets/images/gym2.png",
+          "assets/images/gym3.png",
+          "assets/images/gym4.png",
+          "assets/images/gym5.png",
+        ],
+        imagePath: 'assets/images/gymmain.png',
+        title: '1664 Gym ',
+        description:
+            '1664 Gym is a gym management mobile application that provides users with a comprehensive platform to manage their fitness journey. The app offers features such as class scheduling, membership management, workout tracking, and progress monitoring. Users can easily book classes, track their workouts, and stay motivated on their fitness goals through an intuitive and user-friendly interface.',
+        techIcons: FontAwesomeIcons.flutter,
+        role:
+            'Led the project as Team Lead, implementing core application features, refactoring legacy code, resolving production issues, and optimizing overall app stability and performance.',
+        platform: "mobile",
+        iosLink: "",
+        androidLink:
+            "https://play.google.com/store/apps/details?id=com.startrick.gym1664&hl=en",
+        webLink: "",
+        status: "Live on Google Play",
+        techStacks: [
+          {"Framework/Language": "Flutter/Dart"},
+          {"Architecture": "MVVM"},
+          {"State Management": "Provier"},
+          {"Backend": "PHP"},
+        ],
+        psAndKf: [
+          "Gym class and training program discovery with schedules and detailed descriptions",
+          "Member registration and check-in management with real-time attendance status",
+          "In-app purchase of gym memberships and training packages",
+        ],
+        challenges: [
+          "Designing a scalable MVVM architecture to support multiple gym branches and high concurrent users",
+          "Integrating secure payment gateways with backend APIs for memberships and package purchases",
+          "Handling real-time updates for class bookings, check-ins, and transaction statuses",
+          "Optimizing app performance for large class schedules, member data, and media-rich fitness content"
+        ]),
+    Project(
+        company: "Move On Team",
+        images: [
+          "assets/images/moveon1.PNG",
+          "assets/images/moveon2.PNG",
+          "assets/images/moveon3.PNG",
+          "assets/images/moveon4.PNG",
+          "assets/images/moveon5.PNG",
+          "assets/images/moveon6.PNG",
+          "assets/images/moveon7.PNG",
+          "assets/images/moveon8.PNG",
+          "assets/images/moveon9.PNG",
+          "assets/images/moveon10.PNG",
+          "assets/images/moveon11.PNG",
+        ],
+        imagePath: 'assets/images/moveon1.PNG',
+        title: 'MOVE-ON Super Apps',
+        description:
+            'MOVE-ON is a multi-service Super App that has been created to serve the needs of big running events in Malaysia and provide a convenient digital ecosystem to event participants, organizers, and partners. The application will allow participants to find and participate in ongoing events, enroll and participate, buy event-related products and goods in one mobile tool. It focuses on convenience, real-time communications, and scalable architecture to support a high number of users when the nation-wide running events take place.',
+        techIcons: FontAwesomeIcons.flutter,
+        role:
+            'Led the project as Team Lead, implementing core application features, refactoring legacy code, resolving production issues, and optimizing overall app stability and performance.',
+        platform: "mobile",
+        iosLink:
+            "https://apps.apple.com/ru/app/move-on-super-apps/id6749819421?l=en-GB",
+        androidLink:
+            "https://play.google.com/store/apps/details?id=com.moveonmy.moveon",
+        webLink: "",
+        status: "Live on Google Play/App Store",
+        techStacks: [
+          {"Framework/Language": "Flutter/Dart"},
+          {"Architecture": "Clean Architecture"},
+          {"State Management": "Bloc"},
+          {"Backend": "PHP"},
+        ],
+        psAndKf: [
+          "Running event discovery and registration with event details and schedules",
+          "Participant management with real-time registration and check-in status updates",
+          "In-app purchase of event tickets, race kits, and merchandise",
+        ],
+        challenges: [
+          "Designing a scalable MVVM architecture to support multiple running events and high concurrent users",
+          "Integrating secure payment gateways with backend APIs for event registration and merchandise purchases",
+          "Handling real-time updates for event participation, check-ins, and transaction statuses",
+          "Optimizing app performance for large event listings, participant data, and media-rich content"
+        ]),
+    Project(
+      company: "Mya Satt Yaung Co., Ltd",
+      images: [
+        "assets/images/jade1.PNG",
+        "assets/images/jade2.PNG",
+        "assets/images/jade3.PNG",
+        "assets/images/jade4.PNG",
+        "assets/images/jade5.PNG",
+        "assets/images/jade6.PNG",
+      ],
+      imagePath: 'assets/images/jademain.PNG',
+      title: 'Jade Property',
+      description:
+          'Real Estate Application for managing properties, agents, clients, and transactions efficiently.',
+      techIcons: FontAwesomeIcons.flutter,
+      role:
+          'Independently developed and maintained the mobile application, including feature implementation, legacy refactoring, bug fixes, and performance optimization',
+      platform: "mobile",
       iosLink: "",
       androidLink: "",
       // webLink: "https://admin.bluescreen.site/",
       webLink: "",
-      status: "Internal use application",
-      techStacks: [
-        {"Framework/Language": "Laravel/PHP"},
-        {"Architecture": "MVVM"},
-        {"State Management": "Controller"},
-        {"Backend": "PostGraphQl"},
-      ],
-      psAndKf: [
-        "Centralized management of financial transactions and user accounts for online casinos.",
-        "Streamlined admin workflows by providing all modules in a single dashboard.",
-        "User account management including roles, permissions, and settings.",
-        "Detailed log tracking and activity monitoring for security compliance.",
-        "Modular dashboard design for easy navigation between different backoffice sections."
-      ],
-      challenges: [
-        "Integrating multiple financial APIs securely and efficiently.",
-        "Ensuring real-time updates for transactions and banking data.",
-        "Maintaining high security and access control for sensitive casino data.",
-        "Coordinating development with a team under tight project deadlines."
-      ],
-    ),
-    Project(
-      company: "Whatif Solutions Sdn Bhd",
-      images: [
-        "assets/images/infinity_1.png",
-        "assets/images/infinity_2.png",
-        "assets/images/infinity_3.png",
-        "assets/images/infinity_4.png",
-        "assets/images/infinity_5.png",
-        "assets/images/infinity_6.png",
-      ],
-      imagePath: 'assets/images/infinity_main.jpg',
-      title: 'Infinity 688 Backoffice',
-      description:
-          'A backoffice solution for casino operators, designed for secure transaction handling, banking integration, and operational monitoring.',
-      techIcons: FontAwesomeIcons.laravel,
-      role:
-          'Develop full stack dashboard together under a lead senior fullstack developer',
-      platform: "web",
-      iosLink: "",
-      androidLink: "",
-      webLink: "",
-      status: "Internal use application",
-      // webLink: "https://mmk.infinitynow.biz/login",
-      techStacks: [
-        {"Framework/Language": "Laravel/PHP"},
-        {"Architecture": "MVVM"},
-        {"State Management": "Controller"},
-        {"Backend": "PostGraphQl"},
-      ],
-      psAndKf: [
-        "Centralized management of financial transactions and user accounts for online casinos.",
-        "Streamlined admin workflows by providing all modules in a single dashboard.",
-        "User account management including roles, permissions, and settings.",
-        "Detailed log tracking and activity monitoring for security compliance.",
-        "Modular dashboard design for easy navigation between different backoffice sections."
-      ],
-      challenges: [
-        "Integrating multiple financial APIs securely and efficiently.",
-        "Ensuring real-time updates for transactions and banking data.",
-        "Maintaining high security and access control for sensitive casino data.",
-        "Coordinating development with a team under tight project deadlines."
-      ],
-    ),
-    Project(
-      status: "Live on Google Play",
-      company: "Kwin Technologies.co ltd",
-      images: [
-        "assets/images/suzuki_1.png",
-        "assets/images/suzuki_2.png",
-        "assets/images/suzuki_3.png",
-        "assets/images/suzuki_4.png",
-        "assets/images/suzuki_5.png",
-      ],
-      imagePath: 'assets/images/suzuki_main.png',
-      title: 'Suzuki Smart Order',
-      description:
-          'An order management system developed for Suzuki, featuring product catalog, smart notifications, and Google Sign-In for easy access.',
-      techIcons: FontAwesomeIcons.flutter,
-      role:
-          'Led mobile team, Meet with Suzuki clients for analysis,meet with designer to facilitate design and feature compact',
-      platform: "mobile",
-      iosLink: "",
-      androidLink:
-          "https://play.google.com/store/apps/details?id=com.kwinhwl.suzuki_project&pcampaignid=web_share",
-      webLink: "",
+      status: "Not launched yet",
       techStacks: [
         {"Framework/Language": "Flutter/Dart"},
-        {"Architecture": "MVVM"},
-        {"State Management": "Provider"},
-        {"Backend": "Node JS"},
-      ],
-      psAndKf: [
-        "Streamlined product ordering with an intuitive mobile interface",
-        "Smart notifications to keep dealers updated on order status",
-        "Secure Google Sign-In for simplified authentication",
-        "Real-time catalog browsing and stock availability"
-      ],
-      challenges: [
-        "Ensuring seamless data synchronization between mobile app and backend",
-        "Implementing MVVM architecture for scalable and maintainable code",
-        "Integrating secure authentication with Google Sign-In",
-        "Optimizing app performance for large product catalogs and multiple dealers"
-      ],
-    ),
-    Project(
-      company: "Kwin Technologies.co ltd",
-      images: [
-        "assets/images/arfi_1.png",
-        "assets/images/arfi_2.png",
-        "assets/images/arfi_3.png",
-        "assets/images/arfi_4.png",
-        "assets/images/arfi_5.png",
-        "assets/images/arfi_6.png",
-      ],
-      imagePath: 'assets/images/arfi_main.png',
-      title: 'ARFI Ecommerce',
-      description:
-          'E-commerce platform that enables brand owners to showcase products, manage customer orders, and handle online transactions seamlessly.',
-      techIcons: FontAwesomeIcons.flutter,
-      role:
-          'Sole Developer – designed architecture, implemented features, and deployed app end-to-end',
-      platform: "mobile",
-      iosLink: "",
-      androidLink: "",
-      webLink: "",
-      status: "Archive Project",
-      techStacks: [
-        {"Framework/Language": "Flutter/Dart"},
-        {"Architecture": "MVVM"},
-        {"State Management": "Provider"},
+        {"Architecture": "MVC"},
+        {"State Management": "GetX"},
         {"Backend": "PHP"},
       ],
       psAndKf: [
-        "Product catalog with categories and detailed product views",
-        "Customer order management with real-time status updates",
-        "Secure online payments and transaction handling",
-        "Brand owner dashboard for managing inventory and sales"
+        "Property listing creation and management, enabling agents and administrators to add, update, and manage real estate assets.",
+        "Automated property tax fee calculations based on property type, location, and transaction details.",
+        "AI-powered chatbot providing instant assistance for property inquiries, pricing, and user support.",
+        "Integrated payment processing for property create and advertisement fees.",
       ],
       challenges: [
-        "Designing a scalable MVVM architecture for maintainability",
-        "Integrating secure payment gateways with backend Node.js APIs",
-        "Managing real-time order updates between customers and brand owners",
-        "Optimizing performance for large product catalogs with images"
+        "Integrating OneSignal to deliver reliable real-time push notifications across iOS and Android platforms.",
+        "Implementing Pusher for real-time in-app events and live data updates.",
+        "Ensuring message delivery consistency and synchronization between push notifications and in-app states.",
+        "Handling edge cases such as background, foreground, and terminated app states for real-time communication.",
       ],
     ),
     Project(
-      company: "Kwin Technologies.co ltd",
+      company: "AYA Innovation Labs",
       images: [
-        "assets/images/wallet_1.png",
-        "assets/images/wallet_2.png",
-        "assets/images/wallet_3.png",
-        "assets/images/wallet_4.png",
-        "assets/images/wallet_5.png",
+        "assets/images/partner1.PNG",
+        "assets/images/partner2.png",
+        "assets/images/partner3.png",
+        "assets/images/partner4.png",
       ],
-      imagePath: 'assets/images/dr_rej_main.png',
-      title: 'Dr Rejvue Clinic Membership',
+      imagePath: "assets/images/partnermain.PNG",
+      title: 'AYA PAY Partner App',
       description:
-          'A membership management app for clinic patients to manage subscriptions, earn and redeem points, and access services with real-time updates.',
+          'AYA Pay Partner App is created to change the manner in which companies engage with their customers and conduct financial transactions.',
       techIcons: FontAwesomeIcons.flutter,
       role:
-          'Sole Developer – designed architecture, implemented features, and deployed app end-to-end',
+          'Implemented application features, refactored legacy code, fixed production bugs, and optimized app stability and performance',
       platform: "mobile",
-      iosLink: "",
-      androidLink: "",
-      webLink: "",
-      status: "Archive Project",
-      techStacks: [
-        {"Framework/Language": "Flutter/Dart"},
-        {"Architecture": "MVVM"},
-        {"State Management": "Provider"},
-        {"Backend": "Node JS"},
-      ],
-      psAndKf: [
-        "Subscription management for clinic patients with tier-based plans",
-        "Loyalty points system to earn, track, and redeem rewards",
-        "Real-time updates on membership status and clinic services",
-        "Seamless integration with backend APIs for patient data and transactions"
-      ],
-      challenges: [
-        "Implementing a flexible MVVM architecture for membership features",
-        "Developing a secure and scalable points/rewards system",
-        "Synchronizing patient membership data in real time with Node.js backend",
-        "Optimizing performance while handling large patient data and transactions"
-      ],
-    ),
-    Project(
-      company: "Kwin Technologies.co ltd",
-      images: [
-        "assets/images/hrm_1.png",
-        "assets/images/hrm_2.png",
-        "assets/images/hrm_3.png",
-        "assets/images/hrm_4.png",
-        "assets/images/hrm_5.png",
-      ],
-      imagePath: 'assets/images/hrm_main.png',
-      title: 'Kwin HR Management',
-      description:
-          'A complete HR solution providing employee management, leave requests, and performance tracking in one unified mobile platform.',
-      techIcons: FontAwesomeIcons.flutter,
-      role:
-          'Sole Developer – designed architecture, implemented features, and deployed app end-to-end',
-      platform: "mobile",
-      iosLink: "",
-      androidLink: "",
-      webLink: "",
-      status: "Internal use application",
-      techStacks: [
-        {"Framework/Language": "Flutter/Dart"},
-        {"Architecture": "MVVM"},
-        {"State Management": "Provider"},
-        {"Backend": "Node JS"},
-      ],
-      psAndKf: [
-        "Employee management with detailed profiles and role-based access",
-        "Leave request and approval workflow with real-time notifications",
-        "Performance tracking and evaluation tools for HR departments",
-        "Seamless integration with backend APIs for centralized HR data"
-      ],
-      challenges: [
-        "Designing scalable MVVM architecture for complex HR workflows",
-        "Implementing secure role-based access for employees and HR managers",
-        "Synchronizing employee data and leave requests in real time",
-        "Optimizing performance with large datasets of employee records"
-      ],
-    ),
-    Project(
-      status: "Live on Google Play/App Store",
-      company: "My Day Thu Kywal.co ltd",
-      images: [
-        "assets/images/weday_1.png",
-        "assets/images/weday_2.png",
-        "assets/images/weday_3.png",
-        "assets/images/weday_4.png",
-        "assets/images/weday_5.png",
-      ],
-      imagePath: 'assets/images/weday_main.png',
-      title: 'Weday',
-      description:
-          'A social app with features for posts, comments, nested replies, reactions, and live streaming for online vendor live sales powered by Agora SDK.',
-      techIcons: FontAwesomeIcons.flutter,
-      role:
-          'Developed live streaming feature for online selling, integrated Agora SDK, implemented comments with nested replies and reactions',
-      platform: "mobile",
-      iosLink:
-          "https://apps.apple.com/th/app/weday-social-commerce/id6743930076",
+      iosLink: "https://apps.apple.com/th/app/aya-pay-partner/id6449485948",
       androidLink:
-          "https://play.google.com/store/apps/details?id=com.markethub.businesscenter&pcampaignid=web_share",
+          "https://play.google.com/store/apps/details?id=com.ayaplus.partner&hl=en",
+      // webLink: "https://admin.bluescreen.site/",
       webLink: "",
+      status: "Live on Google Play/App Store",
       techStacks: [
         {"Framework/Language": "Flutter/Dart"},
-        {"Architecture": "MVVM"},
-        {"State Management": "Riverpod"},
-        {"Backend": "Java"},
+        {"Architecture": "Clean Architecture"},
+        {"State Management": "Bloc"},
+        {"Backend": "NodeJs"},
       ],
       psAndKf: [
-        "Live streaming feature enabling vendors to sell products online in real-time",
-        "Integrated comments with nested replies for structured discussions",
-        "Reactions system to boost user engagement during posts and streams",
-        "Seamless Agora SDK integration for stable and low-latency video streaming"
+        "Customer transaction assistance and management, enabling partners to support payments and financial operations efficiently.",
+        "Centralized management of DTRs, DSEs, agents, and merchant networks within a single platform.",
+        "Real-time transaction tracking and account monitoring to improve operational visibility and decision-making.",
+        "Secure financial transaction handling and reporting to optimize business performance and customer experience.",
       ],
+
       challenges: [
-        "Integrating and troubleshooting Agora SDK with Flutter for smooth streaming",
-        "Designing scalable comments and nested replies structure for real-time interaction",
-        "Managing complex state with Riverpod for dynamic social features",
-        "Ensuring low-latency video and chat synchronization during live sales"
+        "Integrating secure payment and transaction APIs to support customer-assisted financial operations.",
+        "Ensuring real-time transaction status updates and accurate account balance synchronization.",
+        "Managing complex user roles and permissions for DTRs, DSEs, agents, and merchants.",
+        "Handling edge cases for financial workflows, including failed, pending, and reversed transactions.",
       ],
     ),
+    Project(
+      company: "AYA Innovation Labs",
+      images: [
+        "assets/images/agency1.png",
+        "assets/images/agency2.png",
+        "assets/images/agency3.png",
+        "assets/images/agency4.png",
+      ],
+      imagePath: "assets/images/agency_main.png",
+      title: 'Agency Banking App',
+      description:
+          'Agency Banking app is created to change the manner in which companies engage with their customers and  agents financial transactions.',
+      techIcons: FontAwesomeIcons.flutter,
+      role:
+          'Implemented application features, refactored legacy code, fixed production bugs, and optimized app stability and performance',
+      platform: "mobile",
+      iosLink: "",
+      androidLink: "",
+      // webLink: "https://admin.bluescreen.site/",
+      webLink: "",
+      status: "Not launched yet",
+      techStacks: [
+        {"Framework/Language": "Flutter/Dart"},
+        {"Architecture": "Clean Architecture"},
+        {"State Management": "Bloc"},
+        {"Backend": "NodeJs"},
+      ],
+      psAndKf: [
+        "Customer account inquiry and registration services, enabling agents to onboard and support customers efficiently.",
+        "Cash deposit and withdrawal operations, including mobile and NRC-based cash-out transactions.",
+        "Support for multiple fund transfer types, including account-to-account, account-to-mobile, and NRC-based transfers.",
+        "Secure handling of NRC-to-NRC and NRC-to-mobile transfers to expand access to agency banking services.",
+        "Real-time transaction processing and monitoring to ensure accuracy, reliability, and customer trust.",
+      ],
+      challenges: [
+        "Integrating core banking and agency banking APIs to support cash deposits, withdrawals, and fund transfers.",
+        "Ensuring real-time transaction status updates and accurate balance synchronization across customer and agent accounts.",
+        "Managing complex agent, customer, and account validation flows, including NRC and mobile-based transactions.",
+        "Handling edge cases in agency banking workflows such as transaction failures, reversals, and network interruptions.",
+      ],
+    ),
+    Project(
+        company: "Super Seven Stars",
+        images: [
+          "assets/images/vendor1.png",
+          "assets/images/vendor2.png",
+          "assets/images/vendor3.png",
+          "assets/images/vendor4.png"
+        ],
+        imagePath: 'assets/images/vendor1.png',
+        title: 'Nova Vendor App',
+        description:
+            'Nova Vendor App is a vendor management platform supporting vendor onboarding, product catalog control, order processing, and performance analytics. It integrates with a rider app to enable on-demand delivery workflows including order acceptance, pickup, and customer delivery.',
+        techIcons: FontAwesomeIcons.flutter,
+        role:
+            'Independently developed and maintained the mobile application, including feature implementation, legacy refactoring, bug fixes, and performance optimization',
+        platform: "mobile",
+        iosLink: "",
+        androidLink: "",
+        webLink: "",
+        status: "Not launched yet",
+        techStacks: [
+          {"Framework/Language": "Flutter/Dart"},
+          {"Architecture": "MVVM"},
+          {"State Management": "Provier"},
+          {"Backend": "PHP"},
+        ],
+        psAndKf: [
+          "Vendor product catalog management, enabling vendors to add, update, and manage their product listings efficiently.",
+          "Order processing and management with real-time order status updates and tracking.",
+          "Integration with rider app for on-demand delivery workflows including order acceptance, pickup, and customer delivery.",
+        ],
+        challenges: [
+          "Integrating Firebase Push Notifications to deliver reliable real-time push notifications across iOS and Android platforms.",
+          "Implementing Firebase Realtime for real-time in-app events and live data updates.",
+          "Ensuring message delivery consistency and synchronization between push notifications and in-app states.",
+          "Handling edge cases such as background, foreground, and terminated app states for real-time communication.",
+        ]),
+    Project(
+        company: "Super Seven Stars",
+        images: [
+          "assets/images/rider1.png",
+          "assets/images/rider2.png",
+          "assets/images/rider3.png",
+          "assets/images/rider4.png",
+          "assets/images/rider5.png"
+        ],
+        imagePath: 'assets/images/rider1.png',
+        title: 'Nova Rider App ',
+        description:
+            'Nova Rider App is a rider management platform supporting rider onboarding, delivery tracking, order management, and performance analytics. It integrates with a vendor app to enable on-demand delivery workflows including order acceptance, pickup, and customer delivery.',
+        techIcons: FontAwesomeIcons.flutter,
+        role:
+            'Independently developed and maintained the mobile application, including feature implementation, legacy refactoring, bug fixes, and performance optimization',
+        platform: "mobile",
+        iosLink: "",
+        androidLink: "",
+        webLink: "",
+        status: "Not launched yet",
+        techStacks: [
+          {"Framework/Language": "Flutter/Dart"},
+          {"Architecture": "MVVM"},
+          {"State Management": "Provier"},
+          {"Backend": "PHP"},
+        ],
+        psAndKf: [
+          "Rider onboarding and profile management, enabling riders to register, update their profiles, and manage their delivery assignments efficiently.",
+          "Delivery tracking and management with real-time order status updates and route optimization.",
+          "Integration with vendor app for on-demand delivery workflows including order acceptance, pickup, and customer delivery.",
+        ],
+        challenges: [
+          "Integrating Firebase Push Notifications to deliver reliable real-time push notifications across iOS and Android platforms.",
+          "Implementing Firebase Realtime for real-time in-app events and live data updates.",
+          "Ensuring message delivery consistency and synchronization between push notifications and in-app states.",
+          "Handling edge cases such as background, foreground, and terminated app states for real-time communication.",
+        ]),
+    Project(
+        company: "UMG Myanmar",
+        images: [
+          "assets/images/hi51.png",
+          "assets/images/hi52.png",
+          "assets/images/hi53.png",
+          "assets/images/hi54.png",
+        ],
+        imagePath: 'assets/images/hi5main.png',
+        title: 'Hi5 App',
+        description:
+            'Hi5 Application is to conduct Employee attending, requisition and sharing about policy & announcement to all UMG Employee and can review all employee information from the database storage.',
+        techIcons: FontAwesomeIcons.flutter,
+        role:
+            'Implemented application features, refactored legacy code, fixed production bugs, and optimized app stability and performance',
+        platform: "mobile",
+        iosLink: "",
+        androidLink:
+            "https://play.google.com/store/apps/details?id=com.umg.cid.hi5&hl=en",
+        webLink: "",
+        status: "Live on Google Play Store",
+        techStacks: [
+          {"Framework/Language": "Flutter/Dart"},
+          {"Architecture": "Clean Architecture"},
+          {"State Management": "Bloc"},
+          {"Backend": "Odoo ERP"},
+        ],
+        psAndKf: [
+          "Employee attendance tracking with selfie verification and geolocation tagging.",
+          "Leave requisition and approval workflows integrated with Odoo ERP backend.",
+          "Company policy and announcement sharing for effective internal communication.",
+          "Employee profile management and information retrieval from centralized database.",
+        ],
+        challenges: [
+          "Integrating Odoo ERP backend for seamless data synchronization and workflow management.",
+          "Implementing selfie verification with facial recognition for secure attendance tracking.",
+          "Handling real-time notifications and updates for leave approvals and announcements.",
+          "Optimizing app performance for large employee datasets and media-rich content.",
+        ]),
+    Project(
+        company: "Freelance",
+        images: [
+          "assets/images/comic1.png",
+          "assets/images/comic2.png",
+          "assets/images/comic3.png",
+          "assets/images/comic4.png",
+          "assets/images/comic5.png",
+          "assets/images/comic6.png",
+          "assets/images/comic7.png",
+        ],
+        imagePath: 'assets/images/comicmain.jpg',
+        title: 'Lazy Comic App',
+        description:
+            'Lazy Comic App is a mobile application that allows users to browse and read comics on the go.',
+        techIcons: FontAwesomeIcons.flutter,
+        role:
+            'Implemented application features, refactored legacy code, fixed production bugs, and optimized app stability and performance',
+        platform: "mobile",
+        iosLink: "",
+        androidLink: "",
+        webLink: "",
+        status: "Not launched yet",
+        techStacks: [
+          {"Framework/Language": "Flutter/Dart"},
+          {"Architecture": "Clean Architecture"},
+          {"State Management": "Bloc"},
+          {"Backend": "PHP"},
+        ],
+        psAndKf: [
+          " Social authentication for quick and secure sign-in using Google and Facebook accounts.",
+          "Read free and premium books anytime and anywhere with an extensive comic library.",
+          "Purchase premium books using in-app coins for a seamless buying experience.",
+          "Full-screen reading mode for an immersive experience",
+        ],
+        challenges: [
+          "Integrating social authentication using Firebase Authentication for Google and Facebook sign-in.",
+          "Implementing in-app coin purchase system with secure payment gateway integration.",
+          "Designing an intuitive UI/UX for seamless comic browsing and reading experience.",
+          "Optimizing app performance for smooth navigation and fast loading times.",
+        ]),
   ];
 
   bool _isProfilePrecached = false;
@@ -548,7 +702,6 @@ class _HeroSectionState extends State<HeroSection>
       duration: const Duration(milliseconds: 1000),
     );
 
-    // Add scroll listener to show/hide back to top button and trigger section animations
     _scrollController.addListener(() {
       if (_scrollController.offset >= 400) {
         if (!_showBackToTop) {
@@ -588,7 +741,7 @@ class _HeroSectionState extends State<HeroSection>
   }
 
   Future<void> _precacheProfileImage() async {
-    const imagePath = "assets/images/me_profile.png";
+    const imagePath = "assets/images/pp.png";
     await precacheImage(const AssetImage(imagePath), context);
     await Future.delayed(const Duration(seconds: 1));
 
@@ -757,10 +910,10 @@ class _HeroSectionState extends State<HeroSection>
   }
 
   void _downloadResume() {
-    const String assetPath = "assets/NCCL5_HWL_certificate_1.pdf";
+    const String assetPath = "assets/Resume(Tin).pdf";
 
     html.AnchorElement(href: assetPath)
-      ..setAttribute("download", "NCCL5_HWL_certificate_1.pdf")
+      ..setAttribute("download", "Resume(Tin).pdf")
       ..click();
   }
 
@@ -851,15 +1004,13 @@ class _HeroSectionState extends State<HeroSection>
             floatingActionButton: _showBackToTop
                 ? FloatingActionButton(
                     onPressed: _scrollToTop,
-                    backgroundColor: const Color(0xFFBB86FC),
+                    backgroundColor: const Color.fromARGB(255, 201, 250, 136),
                     foregroundColor: const Color(0xFF121212),
                     elevation: 8,
                     child: const Icon(Icons.keyboard_arrow_up, size: 28),
                   )
                 : null,
             body: Container(
-              // --- FIX #1: REMOVE PINK/PURPLE TINT FROM GRADIENT ---
-              // Replaced the previous colors with a cleaner, more neutral gradient.
               decoration: const BoxDecoration(
                 color: Color.fromRGBO(1, 0, 0, 1),
               ),
@@ -935,11 +1086,13 @@ class _HeroSectionState extends State<HeroSection>
                                         : TextAlign.center,
                                   ),
                                   Text(
-                                    'I am Htet Wai Lwin',
+                                    'I am Tin Yadanar',
                                     style: GoogleFonts.oxanium(
                                       fontSize: isDesktop ? 55 : 34,
                                       fontWeight: FontWeight.bold,
-                                      color: const Color(0xFFBB86FC),
+                                      color: const Color.fromARGB(
+                                          255, 201, 250, 136),
+                                      // color: const Color.fromARGB(255, 201, 250, 136),
                                     ),
                                     textAlign: isDesktop
                                         ? TextAlign.start
@@ -949,7 +1102,7 @@ class _HeroSectionState extends State<HeroSection>
                                   AnimatedTextKit(
                                     animatedTexts: [
                                       TypewriterAnimatedText(
-                                        'Mobile Application Developer(Flutter)',
+                                        'Senior Mobile Developer(Flutter)/Software Engineer',
                                         textStyle: GoogleFonts.oxanium(
                                           fontSize: isDesktop ? 32 : 18,
                                           color: Colors.white,
@@ -985,15 +1138,16 @@ class _HeroSectionState extends State<HeroSection>
                                   ),
                                   const SizedBox(height: 32),
                                   Text(
-                                    "I'm a passionate Mobile developer with a focus on creating beautiful and functional cross-platform applications. I have over 3 years of experience in mobile app development, specializing in Flutter and Dart.",
-                                    style: GoogleFonts.poppins(
-                                      fontSize: isDesktop ? 16 : 12,
-                                      color: Colors.white,
-                                    ),
-                                    textAlign: isDesktop
-                                        ? TextAlign.start
-                                        : TextAlign.center,
-                                  ),
+                                      """Senior Mobile Developer with over 5 years of experiences architecting high-performance, scalable applications for the FinTech and E-commerce sectors and more. Expert in bridging Flutter eﬃciency with native Swift and Kotlin performance to deliver secure, enterprise-grade solutions. Deep proficiency in Clean Architecture and comprehensive state management ecosystems (BLoC, Riverpod, GetX, Provider), with a proven track record of optimizing app start-up times, reducing technical debt, and driving user retention through seamless UI/UX. Skilled in CI/CD pipeline implementation using GitHub Actions and Bitrise, ensuring rapid, reliable deployments. Adept at collaborating with cross-functional teams to translate complex requirements into robust mobile solutions that align with business goals.""",
+                                      style: GoogleFonts.poppins(
+                                        fontSize: isDesktop ? 16 : 12,
+                                        color: Colors.white,
+                                      ),
+                                      textAlign: TextAlign.justify
+                                      // textAlign: isDesktop
+                                      //     ? TextAlign.justify
+                                      //     : TextAlign.justify,
+                                      ),
                                   const SizedBox(height: 24),
                                   ElevatedButton.icon(
                                     onPressed: () {
@@ -1005,7 +1159,8 @@ class _HeroSectionState extends State<HeroSection>
                                       style: GoogleFonts.oxanium(fontSize: 14),
                                     ),
                                     style: ElevatedButton.styleFrom(
-                                      backgroundColor: const Color(0xFFBB86FC),
+                                      backgroundColor: const Color.fromARGB(
+                                          255, 201, 250, 136),
                                       foregroundColor: const Color(0xFF121212),
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 24, vertical: 16),
@@ -1063,14 +1218,15 @@ class _HeroSectionState extends State<HeroSection>
                                             offset: const Offset(0, 15))
                                       ],
                                       border: Border.all(
-                                          color: const Color(0xFFBB86FC)
+                                          color: const Color.fromARGB(
+                                                  255, 201, 250, 136)
                                               .withOpacity(0.3),
                                           width: 6),
                                     ),
                                     child: ClipOval(
                                       child: Image.asset(
-                                        'assets/images/me_profile.png',
-                                        fit: BoxFit.cover,
+                                        'assets/images/pp2.png',
+                                        fit: BoxFit.fitWidth,
                                         errorBuilder: (context, error,
                                                 stackTrace) =>
                                             const Icon(Icons.person, size: 100),
@@ -1124,10 +1280,10 @@ class _HeroSectionState extends State<HeroSection>
                       ),
                     ),
                     const SizedBox(height: 48),
-                    _buildSectionHeader('Certifications'),
-                    const SizedBox(height: 24),
-                    _buildCertificationsGrid(),
-                    const SizedBox(height: 100),
+                    // _buildSectionHeader('Competitions & Certifications'),
+                    // const SizedBox(height: 24),
+                 //   _buildCertificationsGrid(),
+                    // const SizedBox(height: 100),
                     // Projects section
                     Container(
                       key: _projectsKey,
@@ -1188,6 +1344,7 @@ class _HeroSectionState extends State<HeroSection>
     final List<String> skills = [
       'Flutter',
       'Dart',
+      'Flutter Web',
       'Firebase',
       'REST API',
       'Provider',
@@ -1196,7 +1353,8 @@ class _HeroSectionState extends State<HeroSection>
       'GetX',
       'Git',
       'Laravel',
-      'SQL'
+      'SQL',
+    
     ];
     return Wrap(
       spacing: 10.0,
@@ -1211,7 +1369,7 @@ class _HeroSectionState extends State<HeroSection>
       label: Text(
         skill,
         style: GoogleFonts.oxanium(
-          color: const Color(0xFFBB86FC),
+          color: const Color.fromARGB(255, 201, 250, 136),
           fontWeight: FontWeight.w500,
         ),
       ),
@@ -1219,7 +1377,8 @@ class _HeroSectionState extends State<HeroSection>
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
-        side: BorderSide(color: const Color(0xFFBB86FC).withOpacity(0.3)),
+        side: BorderSide(
+            color: const Color.fromARGB(255, 201, 250, 136).withOpacity(0.3)),
       ),
     );
   }
@@ -1267,7 +1426,8 @@ class _HeroSectionState extends State<HeroSection>
         children: [
           Text(stat['value']!,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  fontWeight: FontWeight.bold, color: const Color(0xFFBB86FC))),
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(255, 201, 250, 136))),
           const SizedBox(height: 8),
           Text(stat['label']!,
               style: Theme.of(context)
@@ -1295,7 +1455,8 @@ class _HeroSectionState extends State<HeroSection>
               TextSpan(text: 'My Professional '),
               TextSpan(
                 text: 'Experience',
-                style: TextStyle(color: Color(0xFFBB86FC)),
+                style:
+                    TextStyle(color: const Color.fromARGB(255, 201, 250, 136)),
               ),
             ],
           ),
@@ -1352,7 +1513,7 @@ class _HeroSectionState extends State<HeroSection>
       style: GoogleFonts.oxanium(
         fontSize: 28,
         fontWeight: FontWeight.w500,
-        color: const Color(0xFFBB86FC),
+        color: const Color.fromARGB(255, 201, 250, 136),
       ),
     );
   }
@@ -1413,7 +1574,7 @@ class _HeroSectionState extends State<HeroSection>
           style: GoogleFonts.oxanium(
             fontSize: 42,
             fontWeight: FontWeight.w500,
-            color: const Color(0xFFBB86FC),
+            color: const Color.fromARGB(255, 201, 250, 136),
           ),
         ),
         const SizedBox(height: 16),
@@ -1476,8 +1637,8 @@ class _HeroSectionState extends State<HeroSection>
               height: 8,
               decoration: BoxDecoration(
                 color: isActive
-                    ? const Color(0xFFBB86FC)
-                    : const Color(0xFFBB86FC).withOpacity(0.3),
+                    ? const Color.fromARGB(255, 201, 250, 136)
+                    : const Color.fromARGB(255, 201, 250, 136).withOpacity(0.3),
                 borderRadius: BorderRadius.circular(8),
               ),
             );
@@ -1500,7 +1661,7 @@ class _HeroSectionState extends State<HeroSection>
           style: GoogleFonts.oxanium(
             fontSize: 42,
             fontWeight: FontWeight.bold,
-            color: const Color(0xFFBB86FC),
+            color: const Color.fromARGB(255, 201, 250, 136),
           ),
         ),
         const SizedBox(height: 16),
@@ -1579,7 +1740,7 @@ class _HeroSectionState extends State<HeroSection>
             ElevatedButton(
               onPressed: _isSending ? null : _sendEmail,
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFBB86FC),
+                backgroundColor: const Color.fromARGB(255, 201, 250, 136),
                 foregroundColor: const Color(0xFF121212),
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 shape: RoundedRectangleBorder(
@@ -1626,7 +1787,8 @@ class _HeroSectionState extends State<HeroSection>
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.0),
-          borderSide: const BorderSide(color: Color(0xFFBB86FC), width: 2),
+          borderSide: const BorderSide(
+              color: Color.fromARGB(255, 201, 250, 136), width: 2),
         ),
       ),
       style: GoogleFonts.poppins(
@@ -1675,12 +1837,12 @@ class _HeroSectionState extends State<HeroSection>
                     // mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       _buildSocialIcon(FontAwesomeIcons.github, () async {
-                        await _launchUrl('https://github.com/htetwai18');
+                        await _launchUrl('https://github.com/tin1810');
                       }, 'Github'),
                       const SizedBox(width: 24),
                       _buildSocialIcon(FontAwesomeIcons.linkedin, () async {
                         await _launchUrl(
-                            'https://www.linkedin.com/in/htetwailwin/');
+                            'https://www.linkedin.com/in/tinyadanar/');
                       }, 'LinkedIn'),
                       const SizedBox(width: 24),
                       _buildSocialIcon(
@@ -1688,7 +1850,7 @@ class _HeroSectionState extends State<HeroSection>
                               .whatsapp, // Phone is available in default Material Icons
                           () async {
                         await _launchUrl(
-                            'https://wa.me/+660917073034'); // opens phone dialer
+                            'https://wa.me/+660829523886'); // opens phone dialer
                       }, 'Whatsapp'),
                       const SizedBox(width: 24),
                       _buildSocialIcon(
@@ -1696,7 +1858,7 @@ class _HeroSectionState extends State<HeroSection>
                               .line, // Phone is available in default Material Icons
                           () async {
                         await _launchUrl(
-                            'https://line.me/ti/p/_uU9xGhxNP'); // opens phone dialer
+                            'https://line.me/ti/p/ffFXDB-E-B'); // opens phone dialer
                       }, 'Line'),
                     ],
                   ),
@@ -1706,7 +1868,7 @@ class _HeroSectionState extends State<HeroSection>
           ),
           const SizedBox(height: 24),
           Text(
-            '© 2025 Htet Wai Lwin. Created with Flutter 3.35.4',
+            '© 2025 Tin Yadanar. Created with Flutter 3.35.4',
             style: GoogleFonts.oxanium(
               color: Colors.grey[400],
             ),
@@ -1728,7 +1890,6 @@ class _HeroSectionState extends State<HeroSection>
   }
 }
 
-// Animated Timeline Tile for branching effect
 class AnimatedTimelineTile extends StatefulWidget {
   final Experience experience;
   final bool isFirst;
@@ -1771,7 +1932,6 @@ class _AnimatedTimelineTileState extends State<AnimatedTimelineTile>
       CurvedAnimation(parent: _itemController, curve: Curves.easeInOut),
     );
 
-    // Create branching effect - items slide in from periphery toward center
     final slideBegin = widget.isLeftAligned
         ? const Offset(-0.5, 0) // From left
         : const Offset(0.5, 0); // From right
@@ -1781,7 +1941,6 @@ class _AnimatedTimelineTileState extends State<AnimatedTimelineTile>
       CurvedAnimation(parent: _itemController, curve: Curves.easeOutCubic),
     );
 
-    // Start animation with delay when parent controller starts
     widget.animationController.addStatusListener((status) {
       if (status == AnimationStatus.forward) {
         Future.delayed(widget.delay, () {

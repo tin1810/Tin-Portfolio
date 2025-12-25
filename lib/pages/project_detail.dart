@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:device_frame_plus/device_frame_plus.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hwl_portforlio/pages/project.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:tin_portfolio/pages/project.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// --- Converted to a StatefulWidget ---
 class ProjectDetailPage extends StatefulWidget {
   final Project project;
   const ProjectDetailPage({
@@ -20,14 +19,12 @@ class ProjectDetailPage extends StatefulWidget {
 }
 
 class _ProjectDetailPageState extends State<ProjectDetailPage> {
-  // --- State variables for auto-scrolling ---
   late final FixedExtentScrollController _scrollController;
   Timer? _timer;
   int _currentItemIndex = 0;
 
   bool _areImagesPrecached = false;
 
-  // Use project's images instead of hardcoded screenshots
   List<String> get screenshotImages => widget.project.images;
 
   Future<void> _launchUrl(String url) async {
@@ -150,7 +147,7 @@ class _ProjectDetailPageState extends State<ProjectDetailPage> {
                     style: GoogleFonts.oxanium(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
-                      color: const Color(0xFFBB86FC),
+                      color: const Color.fromARGB(255, 201, 250, 136),
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -376,7 +373,7 @@ class _ProjectDetailPageState extends State<ProjectDetailPage> {
           style: GoogleFonts.oxanium(
             fontSize: 20,
             fontWeight: FontWeight.w600,
-            color: const Color(0xFFBB86FC),
+            color: const Color.fromARGB(255, 201, 250, 136),
           ),
         ),
         const SizedBox(height: 14),
@@ -547,7 +544,7 @@ class FeatureListItem extends StatelessWidget {
         children: [
           const Icon(
             Icons.check_circle,
-            color: Color(0xFFBB86FC),
+            color: Color.fromARGB(255, 201, 250, 136),
           ),
           const SizedBox(width: 12),
           Expanded(

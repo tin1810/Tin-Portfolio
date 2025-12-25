@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hwl_portforlio/pages/hero_section.dart';
+import 'package:tin_portfolio/pages/hero_section.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Htet Wai Lwin Portfolio',
+      title: 'Tin Yadanar Portfolio',
       theme: ThemeData(
         useMaterial3: false,
         primarySwatch: Colors.blue,

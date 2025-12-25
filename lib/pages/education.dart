@@ -91,12 +91,12 @@ class EducationTile extends StatelessWidget {
                           Text(
                             item.university,
                             style: const TextStyle(
-                              color: Color(0xFFBB86FC),
+                              color: Color.fromARGB(255, 201, 250, 136),
                             ),
                           ),
                           const Icon(
                             Icons.open_in_new,
-                            color: Color(0xFFBB86FC),
+                            color: Color.fromARGB(255, 201, 250, 136),
                             size: 14,
                           ),
                         ],
@@ -154,13 +154,13 @@ class EducationTile extends StatelessWidget {
                           Text(
                             item.university,
                             style: const TextStyle(
-                              color: Color(0xFFBB86FC),
+                              color: Color.fromARGB(255, 201, 250, 136),
                             ),
                           ),
                           const SizedBox(width: 4),
                           const Icon(
                             Icons.open_in_new,
-                            color: Color(0xFFBB86FC),
+                            color: Color.fromARGB(255, 201, 250, 136),
                             size: 14,
                           ),
                         ],
@@ -217,12 +217,12 @@ class EducationTile extends StatelessWidget {
                           Text(
                             item.university,
                             style: const TextStyle(
-                              color: Color(0xFFBB86FC),
+                              color: Color.fromARGB(255, 201, 250, 136),
                             ),
                           ),
                           const Icon(
                             Icons.open_in_new,
-                            color: Color(0xFFBB86FC),
+                            color: Color.fromARGB(255, 201, 250, 136),
                             size: 14,
                           ),
                         ],
@@ -256,7 +256,7 @@ class TimelineNode extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const timelineColor = Color(0xFFBB86FC);
+    const timelineColor = Color.fromARGB(255, 201, 250, 136);
     return SizedBox(
       width: 20,
       child: Column(
@@ -320,12 +320,12 @@ class CertificationCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: const Color(0xFFBB86FC).withOpacity(0.2),
+                color: const Color.fromARGB(255, 201, 250, 136).withOpacity(0.2),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(
                 item.icon,
-                color: const Color(0xFFBB86FC),
+                color: const Color.fromARGB(255, 201, 250, 136),
                 size: 20,
               ),
             ),

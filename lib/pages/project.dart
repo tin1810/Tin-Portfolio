@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:math' as math;
-import 'package:hwl_portforlio/pages/project_detail.dart';
+
+import 'package:tin_portfolio/pages/project_detail.dart';
 
 // --- Data Model ---
 class Project {
@@ -131,6 +132,7 @@ class _ProjectCardState extends State<ProjectCard> {
                   const SizedBox(height: 20),
                   Text(
                     widget.project.title,
+                    maxLines: 2,
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
@@ -140,6 +142,8 @@ class _ProjectCardState extends State<ProjectCard> {
                   const SizedBox(height: 8),
                   Text(
                     widget.project.description,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(color: Colors.grey[400], height: 1.5),
                   ),
                   const SizedBox(height: 16),
@@ -158,7 +162,7 @@ class _ProjectCardState extends State<ProjectCard> {
                         },
                         style: TextButton.styleFrom(
                           backgroundColor: const Color(0xFF2D2D2D),
-                          foregroundColor: const Color(0xFFBB86FC),
+                          foregroundColor: const Color.fromARGB(255, 201, 250, 136),
                           padding: const EdgeInsets.symmetric(
                               horizontal: 24, vertical: 16),
                           shape: RoundedRectangleBorder(

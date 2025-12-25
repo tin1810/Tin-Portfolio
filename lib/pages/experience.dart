@@ -107,7 +107,7 @@ class _TimelineCenterNode extends StatelessWidget {
             width: 12,
             height: 12,
             decoration: const BoxDecoration(
-              color: Color(0xFFBB86FC),
+              color: Color.fromARGB(255, 201, 250, 136),
               shape: BoxShape.circle,
             ),
           ),
@@ -188,7 +188,7 @@ class _ExperienceCard extends StatelessWidget {
                 Text(
                   experience.company,
                   style: TextStyle(
-                    color: const Color(0xFFBB86FC),
+                    color: const Color.fromARGB(255, 201, 250, 136),
                     fontWeight: FontWeight.w600,
                     // decoration: TextDecoration.underline,
                   ),
@@ -196,7 +196,7 @@ class _ExperienceCard extends StatelessWidget {
                 const SizedBox(width: 4),
                 const Icon(
                   Icons.open_in_new,
-                  color: Color(0xFFBB86FC),
+                  color: Color.fromARGB(255, 201, 250, 136),
                   size: 14,
                 ),
               ],
@@ -209,7 +209,7 @@ class _ExperienceCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Icon(Icons.check_circle,
-                        color: Color(0xFFBB86FC), size: 16),
+                        color: Color.fromARGB(255, 201, 250, 136), size: 16),
                     const SizedBox(width: 8),
                     Expanded(
                         child: Text(resp,
