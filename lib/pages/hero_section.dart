@@ -2,10 +2,12 @@ import 'dart:convert';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'dart:html' as html;
+import 'dart:typed_data';
 
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:tin_portfolio/main.dart';
@@ -909,12 +911,34 @@ class _HeroSectionState extends State<HeroSection>
     }
   }
 
-  void _downloadResume() {
-    const String assetPath = "assets/Resume(Tin).pdf";
-
-    html.AnchorElement(href: assetPath)
-      ..setAttribute("download", "Resume(Tin).pdf")
-      ..click();
+  Future<void> _downloadResume() async {
+    try {
+      // Load the asset as bytes
+      final ByteData data = await rootBundle.load("assets/Resume(Tin).pdf");
+      final Uint8List bytes = data.buffer.asUint8List();
+      
+      // Create a blob from the bytes
+      final blob = html.Blob([bytes], 'application/pdf');
+      final url = html.Url.createObjectUrlFromBlob(blob);
+      
+      // Create and trigger download
+      final anchor = html.AnchorElement(href: url)
+        ..setAttribute("download", "Resume(Tin).pdf")
+        ..click();
+      
+      // Clean up
+      html.Url.revokeObjectUrl(url);
+    } catch (e) {
+      // Handle error - show snackbar or error message
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Failed to download resume. Please try again.'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    }
   }
 
   @override
